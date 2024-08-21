@@ -3,18 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Base64 Image Encoder</title>
+    <title>Base64 Image Encoder/Decoder</title>
 </head>
 <body>
-    <h1>Base64 Image Encoder</h1>
+    <h1>Base64 Image Encoder/Decoder</h1>
+
+    <!-- Форма для загрузки файла и кодирования изображения -->
+    <h2>Encode Image to Base64</h2>
     <input type="file" id="fileInput" accept="image/*">
     <div>
-        <h2>Encoded Base64 String:</h2>
+        <h3>Encoded Base64 String:</h3>
         <textarea id="base64Output" rows="10" cols="50" readonly></textarea>
     </div>
     <div>
-        <h2>Image Preview:</h2>
+        <h3>Image Preview:</h3>
         <img id="imagePreview" alt="Image Preview" style="max-width: 500px;">
+    </div>
+
+    <!-- Форма для декодирования Base64 строки в изображение -->
+    <h2>Decode Base64 to Image</h2>
+    <textarea id="base64Input" rows="10" cols="50" placeholder="Paste Base64 string here"></textarea>
+    <br>
+    <button id="decodeButton">Decode Base64 String</button>
+    <div>
+        <h3>Decoded Image Preview:</h3>
+        <img id="decodedImagePreview" alt="Decoded Image Preview" style="max-width: 500px;">
     </div>
 
     <script src="script.js"></script>

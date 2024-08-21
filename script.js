@@ -1,3 +1,4 @@
+// Кодирование изображения в Base64 при загрузке файла
 document.getElementById('fileInput').addEventListener('change', function(event) {
     const file = event.target.files[0];
     if (file) {
@@ -30,3 +31,19 @@ function encodeImageToBase64(file) {
         reader.readAsDataURL(file);
     });
 }
+
+// Декодирование строки Base64 и отображение изображения
+document.getElementById('decodeButton').addEventListener('click', function() {
+    const base64String = document.getElementById('base64Input').value.trim();
+    
+    if (base64String) {
+        try {
+            const imageSrc = `data:image/jpeg;base64,${base64String}`;
+            document.getElementById('decodedImagePreview').src = imageSrc;
+        } catch (error) {
+            console.error('Invalid Base64 string');
+        }
+    } else {
+        console.error('No Base64 string provided');
+    }
+});
